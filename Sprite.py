@@ -1,14 +1,22 @@
-"""Sprite class"""
+"""Sprite class
+
+Simple class for taking a matrix of Colour objects and put()ing them onto a
+Unicorn Hat on a Raspberry Pi
+
+Depends on the unicornhat modul for the AdaFruit Neopixel/ws2812 display
+"""
 
 
 import unicornhat as unicorn
 
 
 class Sprite(object):
-    """RGB Colour"""
+    """Stores a rectangular sprite"""
 
     def __init__(self, arrayofarrarycolours):
-        """"""
+        """Usage:
+            Sprite(Colour[][])
+            """
         self._pixels = arrayofarrarycolours
         self._cols = len(self._pixels)
         # Massive assumption here - need a bit of checking of all the rows.
@@ -16,7 +24,7 @@ class Sprite(object):
 
 
     def put(self, column, row):
-        """ Put sprite at (column,row)"""
+        """ Put sprite onto UnicornHat at (column,row)"""
         # Clear pixel buffer
         c = 0
         while c < 8:

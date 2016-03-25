@@ -13,6 +13,28 @@ class Colour(object):
         if blue < 0 or blue > 255:
             raise ValueError('blue needs to be between 0 and 255 inclusive')
 
-        self.red = red
-        self.green = green
-        self.blue = blue
+        self._red = red
+        self._green = green
+        self._blue = blue
+
+
+    def red(self):
+        """Returns red component"""
+        return self._red
+
+
+    def green(self):
+        """Returns green component"""
+        return self._green
+
+
+    def blue(self):
+        """Returns blue component"""
+        return self._blue
+
+
+    def rgb(self):
+        """Returns array of [red, green, blue] components"""
+        return (self._red, self._green, self._blue)
+
+

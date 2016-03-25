@@ -44,10 +44,8 @@ class Sprite(object):
                     continue
                 if ledcol < 0 or ledcol >= 8:
                     continue
-                unicorn.set_pixel(ledcol, ledrow, \
-                        self._pixels[c][r].red, \
-                        self._pixels[c][r].green, \
-                        self._pixels[c][r].blue)
+                pixel = self._pixels[c][r].rgb()
+                unicorn.set_pixel(ledcol, ledrow, *pixel)
                 r += 1
             c += 1
 

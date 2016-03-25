@@ -30,7 +30,13 @@ class Sprite(object):
         while c < self._cols:
             r = 0
             while r < self._rows:
-                unicorn.set_pixel(column + c, row + r, \
+                ledcol = 7 - (column + self._cols - 1 - c)
+                ledrow = row + r
+                if ledrow < 0 or ledrow >= 8:
+                    continue
+                if ledcol < 0 or ledcol >= 8:
+                    continue
+                unicorn.set_pixel(ledcol, ledrow, \
                         self._pixels[c][r].red, \
                         self._pixels[c][r].green, \
                         self._pixels[c][r].blue)

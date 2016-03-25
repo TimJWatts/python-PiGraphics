@@ -1,2 +1,5 @@
-from Graphics.Sprite import Sprite
-from Graphics.Colour import Colour
+"""PiGraphics"""
+
+
+from PiGraphics.Sprite import Sprite
+from PiGraphics.Colour import Colour
